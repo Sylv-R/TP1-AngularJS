@@ -1,1 +1,41 @@
-ma directive "restaurants"
+<style>
+        table, th , td  {
+          border: 1px solid grey;
+          border-collapse: collapse;
+          padding: 5px;
+        }
+        table tr:nth-child(odd) {
+          background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+          background-color: #ffffff;
+        }
+
+        tr:hover td {
+    background-color: #FF0000;
+}
+        
+        </style>
+
+<table align="center">
+    
+    <tbody>
+        <tr ng-repeat="rest in restaurants" ng-click=selectRestaurant(rest)>
+            <!-- <td ng-repeat="r in restaurants">{{r.nom}}</td> -->
+            <td>{{rest.nom}}</td>
+            <td>{{rest.adresse}}</td>
+            <td>{{rest.datedernierevisite}}</td>
+            <td>{{rest.notedernierevisite}}</td>
+           
+        </tr>
+    </tbody>
+
+</table>
+
+<td><restaurantlistdetaildir restaurant="restaurant"></restaurantlistdetaildir></td>
+<!-- <li ng-repeat="rest in restaurants | filter:searchText | orderBy:'nom'" ng-click=selectRestaurant(rest)> -->
+        <!-- {{ p.prenom + ' ' + p.nom }} -->
+       <!--  <restaurantlistdetaildir restaurantdetail="rest"></restaurantlistdetaildir>
+    </li> -->
+
+    

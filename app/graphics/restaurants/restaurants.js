@@ -5,13 +5,14 @@ myModule.directive('restaurants', [function () {
         scope: {
             restaurants: '=lesrestaurants'
         },
-        // link: function (scope, element, attrs) {
-        //     scope.selectRestaurant = function (p) {
-        //         /* scope.nom = p.nom;
-        //         scope.prenom = p.prenom */
-        //         //console.log(p);
-        //         scope.restaurant = p;
-        //     }
-        // }
+         link: function (scope, element, attrs) {
+             scope.selectRestaurant = function (r) {
+                 /* scope.nom = p.nom;
+                 scope.prenom = p.prenom */
+                 //console.log(p);
+                 scope.restaurant = r;
+                 console.log(r);
+             }
+         }
     };
 }]);
