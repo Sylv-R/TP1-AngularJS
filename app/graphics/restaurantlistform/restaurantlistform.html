@@ -1,0 +1,21 @@
+<form name="myform" novalidate>
+
+    <div>
+        <p>Bonjour {{restaurant.prenom}} {{restaurant.nom}}</p>
+
+        <div><span>Prénom : </span><input type="text" name="nom" ng-model="monrestaurant.nom" required>
+            <div ng-show="myform.nom.$invalid && myform.nom.$dirty">Le prénom est requis</div>
+            <span>Adresse : </span><input type="text" ng-model="monrestaurant.adresse">
+        </div>
+
+        <div><span>Email : </span><input type="email" name="email" ng-model="monrestaurant.email" required>
+            <div ng-show="myform.email.$error.required && myform.email.$dirty">L'email est requis</div>
+            <div ng-show="myform.email.$error.email && myform.email.$dirty">L'email doit être valide</div>
+
+           <!-- <div><span>Age : </span><input type="number" ng-model="monrestaurant.age">  -->
+                <button ng-click="valider()" ng-disabled="myform.$invalid">Valider</button>
+                <button ng-click="annuler()">Annuler</button>
+            </div>
+</form>
+
+
