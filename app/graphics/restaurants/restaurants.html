@@ -1,41 +1,74 @@
 <style>
-        table, th , td  {
-          border: 1px solid grey;
-          border-collapse: collapse;
-          padding: 5px;
-        }
-        table tr:nth-child(odd) {
-          background-color: #f1f1f1;
-        }
-        table tr:nth-child(even) {
-          background-color: #ffffff;
-        }
+  table,
+  th,
+  td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+  }
 
-        tr:hover td {
-    background-color: #FF0000;
-}
-        
-        </style>
+  table {
+    border-radius: 5px;
 
-<table align="center">
-    
+  }
+
+  td {
+    text-align: center;
+  }
+
+  th {
+    background-color: #949393;
+    text-align: center;
+  }
+
+  table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  tr:hover td {
+    background-color: #cfcdcd;
+    cursor: pointer;
+  }
+
+  .selected {
+    /* font-weight: bold;
+    background-color: black; */
+    color: rgb(47, 47, 221);
+  }
+</style>
+
+<div class="restaurantDiv">
+
+  <table align="center">
+    <tr>
+      <th>Restaurant</th>
+      <th>Adresse</th>
+      <th>Date de la dernière visite</th>
+      <th>Note <br> (sur 10)</th>
+    </tr>
     <tbody>
-        <tr ng-repeat="rest in restaurants" ng-click=selectRestaurant(rest)>
-            <!-- <td ng-repeat="r in restaurants">{{r.nom}}</td> -->
-            <td>{{rest.nom}}</td>
-            <td>{{rest.adresse}}</td>
-            <td>{{rest.datedernierevisite}}</td>
-            <td>{{rest.notedernierevisite}}</td>
-           
-        </tr>
+      <tr ng-repeat="rest in restaurants" ng-click=selectRestaurant(rest) ng-class="{'selected':rest == selectedRow}">
+        <!-- <td ng-repeat="r in restaurants">{{r.nom}}</td> -->
+        <td>{{rest.nom}}</td>
+        <td>{{rest.adresse}}</td>
+        <td>{{rest.datedernierevisite}}</td>
+        <td>{{rest.notedernierevisite}}</td>
+
+      </tr>
     </tbody>
 
-</table>
+  </table>
 
-<td><restaurantlistdetaildir restaurant="restaurant"></restaurantlistdetaildir></td>
-<!-- <li ng-repeat="rest in restaurants | filter:searchText | orderBy:'nom'" ng-click=selectRestaurant(rest)> -->
-        <!-- {{ p.prenom + ' ' + p.nom }} -->
-       <!--  <restaurantlistdetaildir restaurantdetail="rest"></restaurantlistdetaildir>
+  <td>
+    <restaurantlistdetaildir restaurant="restaurant" ng-show="displayform"></restaurantlistdetaildir>
+  </td>
+  <!-- <li ng-repeat="rest in restaurants | filter:searchText | orderBy:'nom'" ng-click=selectRestaurant(rest)> -->
+  <!-- {{ p.prenom + ' ' + p.nom }} -->
+  <!--  <restaurantlistdetaildir restaurantdetail="rest"></restaurantlistdetaildir>
     </li> -->
 
-    
+</div>

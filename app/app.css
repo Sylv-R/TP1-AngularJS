@@ -1,15 +1,107 @@
 /* app css stylesheet */
 
- body{
+body {
   background-image: url("img/grenoble.jpg");
-} 
+  background-repeat: no-repeat;
+  font-family: cursive, times, serif;
+  background-color: grey;
+}
 
-div.formDiv{
+h1 {
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.3);
+  /* background-color: rgb(158, 158, 197, 0.7);
+  background-image: radial-gradient(rgba(0, 225, 255, 0.678), rgb(94, 198, 230), rgb(0, 66, 128)); */
+}
+
+.infosDiv {
+  margin-top: 2%;
   width: 700px;
-  border: solid 3px black;
+  height: 350px;
+  border: solid 2px white;
   border-radius: 20px;
   text-align: center;
-  margin-left: auto ;
+  margin-left: auto;
   margin-right: auto;
+  /* background-color: rgb(153, 136, 136); */
+  background-color: transparent;
+  /* background-image: url("img/resto.jpg"); */
+  background-repeat: no-repeat;
+  color: white;
 }
+
+.restaurantDiv {
+  margin-top: 2%;
+}
+
+.buttonsDiv {
+  margin-top: 5%;
+}
+
+h2 {
+  background-color: rgb(33, 80, 167);
+}
+
+.formDiv {
+  margin-top: 3%;
+  margin-left: 0;
+  position: relative;
+}
+
+.fields {
+  margin-top: 1%;
+}
+
+input{
+  width: 300px;
+  
+  margin-bottom: 5px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:20px
+}
+
+textarea {
+  width: 300px;
+ 
+  margin-bottom: 5px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-left:20px
+}
+
+span{
+  background-color: rgb(46, 86, 161);
+}
+
+label { 
+  background-color: rgb(49, 119, 177);
+  display: inline-block; 
+  padding-top: 5px;
+  text-align: right;
+  width: 250px;
+}
+
+.requiredFields{
+  position: absolute;
+  margin-top: 3px;
+  margin-left: 6%;
+  background-color: white;
+  color: red;
+}
+
+button{
+  border-radius: 20px;
+  background-color: rgb(46, 86, 161);
+  color: black;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+}
+
+
 

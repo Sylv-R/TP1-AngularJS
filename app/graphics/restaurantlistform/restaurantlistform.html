@@ -1,21 +1,32 @@
+<div class="formDiv"></div>
 <form name="myform" novalidate>
-
     <div>
-        <p>Bonjour {{restaurant.prenom}} {{restaurant.nom}}</p>
-
-        <div><span>Prénom : </span><input type="text" name="nom" ng-model="monrestaurant.nom" required>
-            <div ng-show="myform.nom.$invalid && myform.nom.$dirty">Le prénom est requis</div>
-            <span>Adresse : </span><input type="text" ng-model="monrestaurant.adresse">
+        <div class="fields"><label>Date de la dernière visite : </label><input class="inputDate" type="text" name="nom"
+                ng-model="monrestaurant.datedernierevisite" placeholder="JJ/MM/AAAA" required>
+            <span class="requiredFields" ng-show="myform.nom.$invalid && myform.nom.$dirty">La date de la dernière
+                visite est requise</span>
         </div>
 
-        <div><span>Email : </span><input type="email" name="email" ng-model="monrestaurant.email" required>
-            <div ng-show="myform.email.$error.required && myform.email.$dirty">L'email est requis</div>
-            <div ng-show="myform.email.$error.email && myform.email.$dirty">L'email doit être valide</div>
+        <div class="fields">
+            <label>Note : </label><input class="inputNote" type="text" name="notedernierevisite"
+                ng-model="monrestaurant.notedernierevisite" maxlength="2" placeholder="de 0 à 10" required>
+            <span class="requiredFields"
+                ng-show="myform.notedernierevisite.$invalid && myform.notedernierevisite.$dirty">Une note est requise
+            </span>
+        </div>
 
-           <!-- <div><span>Age : </span><input type="number" ng-model="monrestaurant.age">  -->
-                <button ng-click="valider()" ng-disabled="myform.$invalid">Valider</button>
-                <button ng-click="annuler()">Annuler</button>
-            </div>
+        <div class="fields"><label>Commentaire : </label><textarea rows="2" cols="40" type="text" name="commentaire"
+                ng-model="monrestaurant.commentaire" maxlength="255" placeholder="Un commentaire est toujours apprécié"
+                required></textarea>
+            <span class="requiredFields" ng-show="myform.commentaire.$invalid && myform.commentaire.$dirty">Veuillez
+                laisser un commentaire</span>
+
+            <!-- <div><span>Age : </span><input type="number" ng-model="monrestaurant.age">  -->
+            
+        </div>
+        <div class="buttonsDiv">
+            <button ng-click="valider()" ng-disabled="myform.$invalid">Valider</button>
+            <button ng-click="annuler()">Annuler</button>
+        </div>
 </form>
-
-
+</div>

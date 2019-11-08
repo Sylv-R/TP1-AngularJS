@@ -1,7 +1,7 @@
-{{ restaurant.nomproprietaire }}
-<br>
-{{ restaurant.email }}
-
-<div class="formDiv">
-<restaurantform restaurant="restaurant"></restaurantform>
+<div class="infosDiv">
+    <h2>{{restaurant.nom}}</h2>
+    <span>Propriétaire du restaurant : {{ restaurant.nomproprietaire }}</span>
+    <br>
+    <span> Email : {{ restaurant.email }}</span>
+    <restaurantform restaurant="restaurant"></restaurantform>
 </div>
